@@ -56,48 +56,8 @@ Scoring the full customer base and bucketing by predicted LTV quantile surfaces 
 ![Segment Summary](outputs/visualizations/segment_summary.png)
 ![Predicted vs Actual](outputs/visualizations/predicted_vs_actual.png)
 
-## Repository Structure
-
-```
-├── data/
-│   ├── generate_data.py          # Synthetic dataset generator
-│   ├── customers.csv              # Customer master data
-│   └── transactions.csv           # Transaction-level log
-├── notebooks/
-│   └── Customer_LTV_Prediction.ipynb   # Full analysis notebook (executed, with outputs)
-├── src/
-│   └── ltv_pipeline.py            # Production-style script version of the full pipeline
-├── models/
-│   └── ltv_model.pkl               # Trained Random Forest model
-├── outputs/
-│   ├── ltv_predictions.csv         # Final scored customer list (all 3,000 customers)
-│   ├── feature_engineered_dataset.csv
-│   ├── model_comparison.csv
-│   ├── segment_summary.csv
-│   └── visualizations/             # All charts (PNG)
-└── requirements.txt
-```
-
-## How to Run
-
-```bash
-pip install -r requirements.txt
-python data/generate_data.py        # generates customers.csv and transactions.csv
-python src/ltv_pipeline.py          # runs full pipeline, saves model + predictions + charts
-```
-
-Or open `notebooks/Customer_LTV_Prediction.ipynb` to walk through the analysis step by step.
-
 ## Tools & Libraries
-
 Python · Pandas · NumPy · Scikit-learn · XGBoost · Matplotlib · Seaborn
-
-## Next Steps (Production Roadmap)
-
-- Incorporate marketing/acquisition cost per channel to compute LTV:CAC ratios
-- Validate across multiple rolling time windows (not just one train/test split) to check stability
-- Add SHAP values for per-customer explainability, useful for CRM-facing reason codes
-- Retrain on a rolling monthly basis as new transaction data arrives
 
 ---
 *Author: Samson Savio — Data Analyst | [LinkedIn](https://linkedin.com/in/samson-savio-263202165)*
