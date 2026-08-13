@@ -1,0 +1,5 @@
+ltv_segment,customers,total_predicted_ltv,revenue_share_pct
+Low,1200,2710651.666699654,4.6
+Medium,900,8797334.810853705,15.0
+High,600,17893841.287846103,30.4
+VIP,300,29421708.1178636,50.0
